@@ -21,7 +21,7 @@ const fs = require('fs');
 // Membaca Isi File (Async)
 // fs.readFile('data/test.txt', 'utf-8', (err, data) => {
 //     if (err) throw err;
-//     console.log(data);
+    //     console.log(data);
 // });
 
 // Readline
@@ -32,8 +32,20 @@ const rl = readline.createInterface({
 });
 
 rl.question('Masukkan Nama Anda : ', (nama) => {
-    rl.question('Masukkan UID Genshin Anda : ', (UIDGenshin) =>{
-        console.log(`Halo ${nama}, UID Genshin Anda : ${UIDGenshin}`);
+    rl.question('Masukkan UID Genshin Anda : ', (uidGenshin) =>{
+        const contact = {
+            nama,
+            uidGenshin
+        };
+        const file = fs.readFileSync('data/contacts.json', 'utf-8')
+        const contacts = JSON.parse(file);
+
+        contacts.push(contact);
+
+        fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
+
+        console.log('Terima Kasih Sudah Memasukkan Data!');
+
         rl.close();
     })
 });
