@@ -22,8 +22,8 @@ http
         } else {
           res.write(data);
         }
+        res.end();
       });
-      res.end();
     }
   })
 
