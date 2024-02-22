@@ -1,7 +1,9 @@
+const http = require("http");
 const fs = require("fs");
 
-const http = require("http");
 const port = 3000;
+
+const renderHTML = (path, res) => {};
 
 http
   .createServer((req, res) => {
