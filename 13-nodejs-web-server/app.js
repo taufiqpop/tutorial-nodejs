@@ -3,7 +3,17 @@ const fs = require("fs");
 
 const port = 3000;
 
-const renderHTML = (path, res) => {};
+const renderHTML = (path, res) => {
+  fs.readFile(path, (err, data) => {
+    if (err) {
+      res.writeHead(404);
+      res.write("Error: file not found");
+    } else {
+      res.write(data);
+    }
+    res.end();
+  });
+};
 
 http
   .createServer((req, res) => {
@@ -12,21 +22,28 @@ http
     });
 
     const url = req.url;
-    if (url === "/about") {
-      res.write("<h1>Ini Adalah Halaman About</h1>");
-    } else if (url === "/contact") {
-      res.write("<h1>Ini Adalah Halaman Contact</h1>");
-    } else {
-      fs.readFile("./index.html", (err, data) => {
-        if (err) {
-          res.writeHead(404);
-          res.write("Error: file not found");
-        } else {
-          res.write(data);
-        }
-        res.end();
-      });
+
+    // SWITCH
+    switch (url) {
+      case "/about":
+        renderHTML("./about.html", res);
+        break;
+      case "/contact":
+        renderHTML("./contact.html", res);
+        break;
+      default:
+        renderHTML("./index.html", res);
+        break;
     }
+
+    // IF ELSE
+    // if (url === "/about") {
+    //   renderHTML("./about.html", res);
+    // } else if (url === "/contact") {
+    //   renderHTML("./contact.html", res);
+    // } else {
+    //   renderHTML("./index.html", res);
+    // }
   })
 
   .listen(port, () => {
