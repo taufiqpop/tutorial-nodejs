@@ -1,0 +1,18 @@
+<%- include('layouts/header') %>
+<%- include('layouts/nav') %>
+
+  <h1>Hello <%= nama %></h1>
+  <p>Welcome to my site..</p>
+
+  <h4>Data Mahasiswa</h4>
+  <% if (mahasiswa.length < 1) { %>
+    <p>Data Mahasiswa Masih Kosong</p>
+  <% } else { %><% mahasiswa.forEach(mhs => { %>
+      <ul>
+        <li>Nama : <%= mhs.nama %></li>
+        <li>Email : <%= mhs.email %></li>
+      </ul>
+    <% }) %>
+  <% } %>
+
+  <%- include('layouts/footer') %>
