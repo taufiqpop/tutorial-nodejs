@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6610d64260d652fe9e28f70f"
+  },
+  "nama": "Pop",
+  "email": "pop@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "6610d6ba60d652fe9e28f710"
+  },
+  "nama": "Lala",
+  "email": "lalapo19@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "6610d92103ef5c29a49128d1"
+  },
+  "nama": "Syari",
+  "email": "syaridf@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "6610d92103ef5c29a49128d3"
+  },
+  "nama": "Ainunafi",
+  "email": "ainunafi@gmail.com"
+}]
