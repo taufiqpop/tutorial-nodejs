@@ -1,4 +1,4 @@
-# belajar-node-js
-Belajar Tentang Node.js
+# tutorial-nodejs
+Belajar Node JS
 
-Sumber : https://www.youtube.com/watch?v=sSLJx5t4OJ4&list=PLFIM0718LjIW-XBdVOerYgKegBtD6rSfD&pp=iAQB
+## https://nodejs.org/en
